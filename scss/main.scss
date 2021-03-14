@@ -1,0 +1,558 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap');
+
+
+*{margin: 0;padding: 0; font-family: 'Montserrat', sans-serif;; color: #fff;}
+a{text-decoration: none;}
+li{ list-style: none;}
+
+header{
+    position: fixed; top: 0; left: 0; z-index: 4500; padding: 0.5rem; box-sizing: border-box;
+    width: 100%; 
+    h1{
+        float:left;
+    }
+    #myMenu{
+        float: right; margin-right: 50px;
+        li{
+            float: left; margin-left: 50px;
+            .line{
+                width: 0; height: 0; margin:0 auto; background-color: #fff; 
+            }
+            &:hover{
+                .line{
+                    display: block; height: 15px; transition: 0.4s;
+                }
+            }
+            &.active{
+                font-weight: 600; 
+                .line{
+                    display: block; width:1px; height: 30px; transition: 0.4s;
+                }
+            } 
+        }
+    }
+}
+.page01{
+    background-attachment: fixed;
+    background-image: url(../images/main_main01_img.jpg); background-repeat: no-repeat; background-size: 100% 90%;
+    .mask{
+        position: absolute; top: 0;
+        width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(81, 0, 255, 0.089), rgba(0, 0, 0, 0.658), #000);
+        &::before{
+            position: absolute;
+            left: 0;
+            top: -10%;
+            width: 100%;
+            height: 120%;
+            background: #fff;
+            filter: blur(10px);
+            content: "";
+            opacity: 0;
+            animation: flash 0.6s cubic-bezier(0,.82,1,.22) alternate infinite;
+                }
+    }
+    .mainText{  
+        position: absolute; top: 60%; left: 55%;
+        
+        .firstTxt, .secondTxt, .thirdTxt{
+            opacity: 0;
+            transition: 0.6s;
+            font-weight: 900; 
+            font-size: 0;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            background-image: url(../images/Clipping_img.gif);
+            background-size: 80%;
+            &.active{
+                opacity: 1;
+                font-size: 2.8rem;
+            }
+        }
+        
+        .firstTxt{
+            transition-delay: 0.1s;
+            
+        }
+        .secondTxt{
+            transition-delay: 0.5s;
+        }
+        .thirdTxt{
+            transition-delay: 1s;
+        }
+    }
+}
+
+@keyframes flash{
+    to {
+      opacity: 0.1;
+    }
+  }
+
+
+.page02{
+    .schedule{
+        position: relative; overflow: hidden; 
+        display: flex; 
+        div{
+            flex: 1; text-align: center;
+            
+            
+        }
+    }
+    .timetable{
+        position: relative; top: -500px;
+        transition: 1s; 
+        h2{ 
+            font-size: 2rem; margin-bottom: 1rem;
+        }
+        &.active{
+            top: 0;
+        }
+    }
+    .lineup{
+        position: relative; bottom: -500px;
+        transition: 1s;
+        h2{ 
+            font-size: 2rem; margin-top: 1rem;
+        }
+        &.active{
+            bottom: 0;
+        }
+    }
+    .timetable, .lineup{
+        .imgBox{
+            position: relative;
+            width: 23rem; height: 27rem;  overflow: hidden;
+            margin: 0 auto;
+            img{
+                width: 100%; height: 100%;
+            }
+            
+            .viewMore{
+                .morebox{
+                    position: absolute; bottom:-110px; transform: rotate(-10deg);
+                    width: 400px; height: 0; background-color: #d900ffa1; transition: 0.5s;
+                }
+                img{
+                    width: 50px; 
+                }
+                a{  
+                    opacity: 0; 
+                    position: absolute; right: 30px; bottom: 60px;
+                }
+                p{  
+                    opacity: 0;
+                    position: absolute; right: 30px; bottom: 30px;
+                }
+            }
+            
+            &:hover{
+                .morebox{
+                    height: 250px;
+                }
+                a,p{
+                    opacity: 1; transition: 0.5s; transition-delay: 0.3s;
+                }
+            }
+        }
+        .viewMoreMobile{
+            display: none;
+        }
+    }
+    .textAnimation{
+        width: 100%; overflow: hidden; margin-top: 4rem;
+        p{  
+            position: absolute; 
+            width: 5000px;
+            font-size: 3rem; font-weight: 600;
+            animation: moveSlide 90s linear infinite;
+            span{
+                -webkit-text-stroke: 1px; 
+                -webkit-text-fill-color: transparent; 
+            }
+        }
+    }
+}
+@keyframes moveSlide{
+    from{ 
+        left: 0px; top: 630px;
+    }
+    to{ 
+        left: -5000px; top: 630px;
+    }
+}
+
+.page03{
+    .photo{
+        width: 80%; padding: 50px;  overflow: hidden; margin: 30px auto; padding-bottom: 0;
+        li{
+            float: left;
+            width: 33.33%;
+            
+            a{  
+                display: block; width: 100%; height: 250px; 
+                overflow: hidden;
+                img{
+                    width: 100%; height: 100%;
+                    transition: 0.3s;
+                }
+                &:hover{
+                    img{
+                        transform: scale(1.2,1.2);
+                    }
+                }
+            }
+        }
+    }
+    svg{
+        width: 80px; height: 80px;
+        float: right; margin-right: 8%;
+    }
+    p{
+        position: absolute; right: 10%; bottom: 5%; font-size: 1.5rem;
+    }
+}
+
+.page04{
+    h2{
+        text-align: center; font-size: 2rem;
+        span{
+            font-size: 1.5rem; 
+        }
+    }
+    .iconSection{
+        display: flex;
+        width: 50%; margin: 0 auto;
+        div{
+            flex: 1; text-align: center; margin-top: 30px;
+            height: 50px; 
+            a{
+                display: block;
+                width: 100px; height: 90px; margin:0 auto;
+            }
+            &:first-child{
+                a{ padding-top: 20px; box-sizing: border-box;}
+            }
+        }
+        p{
+            font-size: 1.5rem; 
+        }
+
+    }
+}
+
+
+
+footer{
+    position: fixed; bottom: -120px;
+    width: 100%; height: 120px; background-color: rgba(255, 255, 255, 0.473); text-align: center;
+    ul{
+        display: flex;
+        width: 300px; margin: 10px auto;
+        li{
+            flex: 1;
+            img{
+                width: 40px;
+            }
+            &:last-child{
+                img{
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+    p{
+        margin-top: 10px; color: #000;
+    }
+    &.active{
+        bottom: 0; transition: 0.3s; transition-delay: 0.2s;
+    }
+}
+
+
+
+/* ====================================================================================== */
+
+/* ======================================tablet================================================ */
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    *{ font-size: 16px; }
+    .page01{
+        .mainText{  
+            position: absolute; top: 65%; left: 45%;
+            .firstTxt, .secondTxt, .thirdTxt{
+                &.active{
+                    opacity: 1;
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+    .page02{
+        .schedule{
+            position: relative; overflow: hidden; 
+            display: flex; 
+        }
+        .timetable, .lineup{
+            .imgBox{
+                position: relative;
+                width: 18rem; height: 24rem; 
+            }
+        }
+        .textAnimation{
+            width: 100%; overflow: hidden; margin-top: 4rem;
+            p{  
+                position: absolute; 
+                width: 4500px;
+                font-size: 2rem; font-weight: 600;
+                animation: moveSlide 90s linear infinite;
+                span{
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+    @keyframes moveSlide{
+        from{ 
+            left: 0px; top: 850px;
+        }
+        to{ 
+            left: -4500px; top: 850px;
+        }
+    }
+    
+.page03{
+    
+    svg{
+        width: 80px; height: 80px;
+        float: right; margin-right: 8%;
+    }
+    p{
+        position: relative; left: 75%; bottom: -25px; font-size: 1.5rem;
+    }
+}
+
+}
+/* ====================================================================================== */
+
+/* ======================================mobile================================================ */
+@media screen and (max-width: 767px){
+    *{ font-size: 14px; } 
+    header{
+        position: fixed; top: 0; left: 0; z-index: 4500; padding: 0.5rem; box-sizing: border-box;
+        width: 100%; 
+        h1{
+            float:left;
+            img{
+                width: 60%;
+            }
+        }
+        #myMenu{
+            float: right; margin-right: 20px;
+            li{
+                float: left; margin-left: 30px;
+                .line{
+                    width: 0; height: 0; margin:0 auto; background-color: #fff; 
+                }
+                .hide{
+                    display: none;
+                }
+                &.active{
+                    font-weight: 600; 
+                    .line{
+                        display: block; width:1px; height: 20px; transition: 0.4s;
+                    }
+                } 
+            }
+        }
+    }
+    .page01{
+        .mainText{  
+            position: absolute; top: 65%; left: 30%;
+            .firstTxt, .secondTxt, .thirdTxt{
+                &.active{
+                    opacity: 1;
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+    .page02{
+        .schedule{
+            position: relative; overflow: hidden; 
+            display: flex; 
+            flex-direction: column;
+            padding: 20px;
+            div{
+                flex: 1; text-align: center;
+            }
+        }
+        .timetable{
+            position: relative; top:0; left: -500px;
+            margin-bottom: 10px;
+            h2{ 
+                font-size: 1.5rem; margin-bottom: 2rem;
+                float: left;
+                margin-left: 30px;
+            }
+            &.active{
+                left: 0;
+            }
+            .imgBox{
+                float: right;
+            }
+        }
+        .lineup{
+            position: relative; bottom:0; right: -500px;
+            h2{ 
+                font-size: 1.5rem; margin-top: 1rem; margin-bottom: 2rem;
+                float: right;
+                margin-right: 50px;
+            }
+            &.active{
+                right: 0;
+            }
+            .imgBox{
+                float: left;
+            }
+        }
+        .timetable, .lineup{
+            .imgBox{
+                width: 10rem; height: 13rem;  overflow: hidden;
+                .viewMore{
+                    display: none;
+                }
+            }
+            .viewMoreMobile{
+                display: block;
+                img{
+                    width: 45px;
+                }
+            }
+        }
+    }
+    @keyframes moveSlide{
+        from{ 
+            left: 0px; top: 550px;
+        }
+        to{ 
+            left: -5000px; top: 550px;
+        }
+    }
+    .page03{
+        .photo{
+            width: 80%; padding: 10px;  overflow: hidden; margin: 30px auto; padding-bottom: 0;
+            box-sizing: border-box;
+            li{
+                float: left;
+                width: 50%;
+                
+                a{  
+                    display: block; width: 100%; height: 100px; padding: 3%; box-sizing: border-box;
+                }
+            }
+        }
+        svg{
+            width: 50px; height: 50px;
+            float: right; margin-right: 8%;
+        }
+        p{
+            position: absolute; right: 10%; bottom: 20%; font-size: 1rem;
+        }
+    }
+
+    .page04{
+        h2{
+            text-align: center; font-size: 1.5rem;
+            span{
+                font-size: 1rem; 
+            }
+        }
+        .iconSection{
+            display: flex;
+            width: 90%; margin: 0 auto;
+            div{
+                flex: 1; text-align: center; margin-top: 30px;
+                height: 150px; 
+                a{
+                    display: block;
+                    width: 50px; height: 70px; margin:0 auto;
+                    img{
+                        width: 100%;
+                    }
+                }
+                &:first-child{
+                    a{ padding-top: 20px; box-sizing: border-box;}
+                }
+            }
+            p{
+                font-size: 1rem; 
+            }
+    
+        }
+    }
+
+    footer{
+        position: fixed; bottom: -120px;
+        width: 100%; height: 120px; background-color: rgba(255, 255, 255, 0.473); text-align: center;
+        ul{
+            display: flex;
+            width: 180px; margin: 10px auto;
+            li{
+                flex: 1;
+                img{
+                    width: 35px;
+                }
+                &:last-child{
+                    img{
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+        p{
+            margin-top: 5px; color: #000; font-size: 0.8rem;
+        }
+        &.active{
+            bottom: 0; transition: 0.3s; transition-delay: 0.2s;
+        }
+    }
+    
+}
+/* ====================================================================================== */
+
+/* ======================================ihphone5================================================ */
+@media screen and (max-width: 320px){
+    *{ font-size: 12px; }
+    header{
+        #myMenu{
+            float: right; margin-right: 10px;
+            li{
+                float: left; margin-left: 20px;
+                .line{
+                    width: 0; height: 0; margin:0 auto; background-color: #fff; 
+                }
+                .hide{
+                    display: none;
+                }
+                &.active{
+                    font-weight: 600; 
+                    .line{
+                        display: block; width:1px; height: 20px; transition: 0.4s;
+                    }
+                } 
+            }
+        }
+    }
+    
+    @keyframes moveSlide{
+        from{ 
+            left: 0px; top: 500px;
+        }
+        to{ 
+            left: -5000px; top: 500px;
+        }
+    }
+}
+/* ====================================================================================== */
