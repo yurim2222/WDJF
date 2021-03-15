@@ -96,14 +96,14 @@ audio { position: fixed; top: 80px; left: 10px; z-index: 300; width: 205px; heig
 .page02 .textAnimation p span { -webkit-text-stroke: 1px; -webkit-text-fill-color: transparent; }
 
 @-webkit-keyframes moveSlide { from { left: 0px;
-    top: 630px; }
+    top: 680px; }
   to { left: -5000px;
-    top: 630px; } }
+    top: 680px; } }
 
 @keyframes moveSlide { from { left: 0px;
-    top: 630px; }
+    top: 680px; }
   to { left: -5000px;
-    top: 630px; } }
+    top: 680px; } }
 
 .page03 .photo { width: 80%; padding: 50px; overflow: hidden; margin: 30px auto; padding-bottom: 0; }
 
